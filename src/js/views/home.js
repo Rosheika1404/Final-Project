@@ -21,13 +21,11 @@ export const Home = () => {
 
 	return (
 		<span className="card">
-			<div className="sidenav">
+			<div className="main box">
 				<div className="login-main-text">
 					<h2>Palace Card Game</h2>
 					<p>Login or register from here to access.</p>
 				</div>
-			</div>
-			<div className="main box">
 				<div className="col-md-6 col-sm-12">
 					<div className="login-form">
 						<form>
