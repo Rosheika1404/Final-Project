@@ -5,70 +5,20 @@ import "../../styles/home.scss";
 // import { signIn } from "../component/signIn.js";
 
 export const Home = () => {
-	const history = useHistory();
-	const [email, setEmail] = useState("");
-	const [password, setPassword] = useState("");
-
-	const onSignInClicked = async (email, password) => {
-		try {
-			await signIn(email, password);
-			history.push("/Contacts");
-			console.log("success");
-		} catch (e) {
-			alert(e.message);
-		}
-	};
-
 	return (
-		<span className="card">
-			<div className="main box">
-				<div className="login-main-text">
-					<h1>Palace Card Game</h1>
-					<p>Login or register from here to access.</p>
-				</div>
-				<div className="col-md-6 col-sm-12">
-					<div className="login-form">
-						<form>
-							<div className="form-group">
-								{/* <label>Email</label> */}
-								<input
-									type="text"
-									className="form-control"
-									placeholder="Email"
-									onChange={e => setEmail(e.target.value)}
-								/>
-							</div>
-							<div className="form-group">
-								{/* <label>Password</label> */}
-								<input
-									type="password"
-									className="form-control"
-									placeholder="Password"
-									onChange={e => setPassword(e.target.value)}
-								/>
-							</div>
-
-							<a className="forgot text-muted" href="#">
-								Forgot password?
-							</a>
-							<br />
-							<br />
-
-							<input
-								type="submit"
-								className="btn btn-black"
-								value="Login"
-								onClick={e => {
-									onSignInClicked(email, password);
-									e.preventDefault();
-								}}
-							/>
-
-							<input type="submit" className="btn btn-secondary" value="Register" />
-						</form>
-					</div>
-				</div>
-			</div>
-		</span>
+		<div className="jumbotron">
+			<h1 className="display-4">Hello, world!</h1>
+			<p className="lead">
+				This is a simple hero unit, a simple jumbotron-style component for calling extra attention to featured
+				content or information.
+			</p>
+			<hr className="my-4" />
+			<p>It uses utility classes for typography and spacing to space content out within the larger container.</p>
+			<p className="lead">
+				<a className="btn btn-primary btn-lg" href="#" role="button">
+					Learn more
+				</a>
+			</p>
+		</div>
 	);
 };
