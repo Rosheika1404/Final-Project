@@ -23,7 +23,7 @@ export const Home = () => {
 		<span className="card">
 			<div className="main box">
 				<div className="login-main-text">
-					<h2>Palace Card Game</h2>
+					<h1>Palace Card Game</h1>
 					<p>Login or register from here to access.</p>
 				</div>
 				<div className="col-md-6 col-sm-12">
@@ -54,18 +54,17 @@ export const Home = () => {
 							<br />
 							<br />
 
-							<button
+							<input
 								type="submit"
 								className="btn btn-black"
+								value="Login"
 								onClick={e => {
 									onSignInClicked(email, password);
 									e.preventDefault();
-								}}>
-								Login
-							</button>
-							<button type="submit" className="btn btn-secondary">
-								Register
-							</button>
+								}}
+							/>
+
+							<input type="submit" className="btn btn-secondary" value="Register" />
 						</form>
 					</div>
 				</div>
