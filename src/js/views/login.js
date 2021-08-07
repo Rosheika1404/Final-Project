@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 
 import { Context } from "../store/appContext";
 
-import "../../styles/demo.scss";
+import "../../styles/login.scss";
 
 export const Login = () => {
 	const history = useHistory();
@@ -14,7 +14,7 @@ export const Login = () => {
 	const onSignInClicked = async (email, password) => {
 		try {
 			await signIn(email, password);
-			history.push("/Home");
+			history.push("/dashboard");
 			console.log("success");
 		} catch (e) {
 			alert(e.message);
