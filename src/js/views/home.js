@@ -9,7 +9,7 @@ import "../../styles/home.scss";
 export const Home = () => {
 	return (
 		<div>
-			<div className="jumbotron">
+			{/* <div className="jumbotron">
 				<h1 className="display-4">Hello, world!</h1>
 				<p className="lead">
 					This is a simple hero unit, a simple jumbotron-style component for calling extra attention to
@@ -24,7 +24,19 @@ export const Home = () => {
 						Learn more
 					</a>
 				</p>
+			</div> */}
+			<div className="jumbotron container">
+				<h1 className="display-4">Palace</h1>
+				<p className="lead">Where Luck Beats Skill</p>
+				<hr className="my-4" />
+
+				<p className="lead">
+					<a className="btn btn-primary btn-lg" href="#" role="button">
+						Learn more
+					</a>
+				</p>
 			</div>
+
 			<div className="text-center mt-5 mb-5 row justify-content-center">
 				{array.map(array => (
 					<Card
@@ -37,16 +49,6 @@ export const Home = () => {
 					/>
 				))}
 			</div>
-		<div className="jumbotron container">
-			<h1 className="display-4">Palace</h1>
-			<p className="lead">Where Luck Beats Skill</p>
-			<hr className="my-4" />
-
-			<p className="lead">
-				<a className="btn btn-primary btn-lg" href="#" role="button">
-					Learn more
-				</a>
-			</p>
 		</div>
 	);
 };
