@@ -37,6 +37,16 @@ export const Home = () => {
 					/>
 				))}
 			</div>
+		<div className="jumbotron container">
+			<h1 className="display-4">Palace</h1>
+			<p className="lead">Where Luck Beats Skill</p>
+			<hr className="my-4" />
+
+			<p className="lead">
+				<a className="btn btn-primary btn-lg" href="#" role="button">
+					Learn more
+				</a>
+			</p>
 		</div>
 	);
 };
