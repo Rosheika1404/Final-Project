@@ -23,7 +23,14 @@ export const Login = () => {
 
 	return (
 		<span className="card">
-			<div className="main box">
+			<div
+				className="main box"
+				style={{
+					position: "absolute",
+					left: "50%",
+					top: "50%"
+					// transform: "translate(-50%, -50%)"
+				}}>
 				<div className="login-main-text">
 					<h1>Palace Card Game</h1>
 					<p>Login or register from here to access.</p>
