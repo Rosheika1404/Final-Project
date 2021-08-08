@@ -6,7 +6,7 @@ import { Context } from "../store/appContext";
 
 import "../../styles/login.scss";
 
-export const Login = () => {
+export const Register = () => {
 	const history = useHistory();
 	const [email, setEmail] = useState("");
 	const [password, setPassword] = useState("");
@@ -33,7 +33,7 @@ export const Login = () => {
 				}}>
 				<div className="login-main-text">
 					<h1>Palace</h1>
-					<p>Login or register to play.</p>
+					<p>Register to play.</p>
 				</div>
 				<div className="col-md-6 col-sm-12">
 					<div className="login-form">
@@ -56,9 +56,18 @@ export const Login = () => {
 									onChange={e => setPassword(e.target.value)}
 								/>
 							</div>
+							<div className="form-group">
+								{/* <label>Password</label> */}
+								<input
+									type="password-confirm"
+									className="form-control"
+									placeholder="Password Confirmation"
+									onChange={e => setPassword(e.target.value)}
+								/>
+							</div>
 
 							<a className="forgot text-muted" href="#">
-								Forgot password?
+								Already have an account? Log In
 							</a>
 							<br />
 							<br />
@@ -66,14 +75,14 @@ export const Login = () => {
 							<input
 								type="submit"
 								className="btn btn-black"
-								value="Login"
+								value="Sign Up"
 								onClick={e => {
 									onSignInClicked(email, password);
 									e.preventDefault();
 								}}
 							/>
 
-							<input type="submit" className="btn btn-secondary" value="Register" />
+							
 						</form>
 					</div>
 				</div>
