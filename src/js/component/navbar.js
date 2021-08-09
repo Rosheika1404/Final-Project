@@ -12,7 +12,7 @@ export const Navbar = () => {
 					<button className="btn btn-primary">Login</button>
 				</Link>
 				&nbsp;
-				<Link to="/login">
+				<Link to="/register">
 					<button className="btn btn-primary">Register</button>
 				</Link>
 			</div>

@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useContext } from "react";
 import { useHistory } from "react-router-dom";
 import { Link } from "react-router-dom";
-import { signIn } from "../utilities/signIn";
+import { signUp } from "../utilities/signUp";
 import { Context } from "../store/appContext";
 
 import "../../styles/login.scss";
@@ -11,9 +11,9 @@ export const Register = () => {
 	const [email, setEmail] = useState("");
 	const [password, setPassword] = useState("");
 
-	const onSignInClicked = async (email, password) => {
+	const onSignUpClicked = async (email, password) => {
 		try {
-			await signIn(email, password);
+			await signUp(email, password);
 			history.push("/dashboard");
 			console.log("success");
 		} catch (e) {
@@ -59,9 +59,9 @@ export const Register = () => {
 							<div className="form-group">
 								{/* <label>Password</label> */}
 								<input
-									type="password-confirm"
+									type="password"
 									className="form-control"
-									placeholder="Password Confirmation"
+									placeholder="Confirm Password"
 									onChange={e => setPassword(e.target.value)}
 								/>
 							</div>
@@ -75,14 +75,12 @@ export const Register = () => {
 							<input
 								type="submit"
 								className="btn btn-black"
-								value="Sign Up"
+								value="Register"
 								onClick={e => {
-									onSignInClicked(email, password);
+									onSignUpClicked(email, password);
 									e.preventDefault();
 								}}
 							/>
-
-							
 						</form>
 					</div>
 				</div>

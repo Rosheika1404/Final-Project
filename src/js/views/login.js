@@ -61,6 +61,11 @@ export const Login = () => {
 								Forgot password?
 							</a>
 							<br />
+							<a className="forgot text-muted" href="#">
+								Need an account? Sign Up
+							</a>
+
+							<br />
 							<br />
 
 							<input
@@ -73,7 +78,7 @@ export const Login = () => {
 								}}
 							/>
 
-							<input type="submit" className="btn btn-secondary" value="Register" />
+							{/* <input type="submit" className="btn btn-secondary" value="Register" /> */}
 						</form>
 					</div>
 				</div>

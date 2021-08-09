@@ -4,6 +4,7 @@ import { BrowserRouter, Route, Switch } from "react-router-dom";
 
 import { Home } from "./views/home";
 import { Login } from "./views/login";
+import { Register } from "./views/register";
 import { Dashboard } from "./views/dashboard";
 import { Single } from "./views/single";
 import injectContext from "./store/appContext";
@@ -26,6 +27,7 @@ const Layout = () => {
 					<Route exact path="/" component={Home} />
 					<Route exact path="/login" component={Login} />
 					<Route exact path="/dashboard" component={Dashboard} />
+					<Route exact path="/register" component={Register} />
 					<Route exact path="/single/:theid">
 						<Single />
 					</Route>
