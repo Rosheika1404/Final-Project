@@ -12,9 +12,9 @@ export const Register = () => {
 	const [password, setPassword] = useState("");
 	const [confirmPassword, setConfirmPassword] = useState("");
 
-	const onSignUpClicked = async (email, password, confirmPassword) => {
+	const onSignUpClicked = async (email, password) => {
 		try {
-			await signUp(email, password, confirmPassword);
+			await signUp(email, password);
 			history.push("/dashboard");
 			console.log("account created");
 		} catch (e) {
@@ -78,10 +78,11 @@ export const Register = () => {
 								className="btn btn-black"
 								value="Register"
 								onClick={e => {
-									if (setConfirmPassword !== setPassword) {
+									if (password !== confirmPassword) {
+										e.preventDefault();
 										alert("Passwords do not match");
 									} else {
-										onSignUpClicked(email, password, confirmPassword);
+										onSignUpClicked(email, password);
 										e.preventDefault();
 									}
 								}}

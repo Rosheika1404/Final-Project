@@ -33,9 +33,9 @@ export const Rules = () => {
 				The first player turns over the top card of the Draw pile to form the Discard pile. This turned over
 				card is called the Start card. The first player plays a card that is equal to or of higher value than
 				the Start card by placing that card on top of the Start card. You can play multiple cards in your turn,
-				as long as they're all equal to or higher and of the same rank. Once you have finished your turn, draw
+				as long as theyre all equal to or higher and of the same rank. Once you have finished your turn, draw
 				cards from the Draw pile to maintain three cards in your hand at all times. You must play a card if you
-				can. If you can't play, you have to pick up the discard pile and add it to your hand. On their turn a
+				can. If you cant play, you have to pick up the discard pile and add it to your hand. On their turn a
 				player can play any 2 card which resets the discard pile to 2, starting the sequence all over. On their
 				turn a player can play the 10 on any card, but it takes the discard pile out of the game instead of
 				resetting it. The player who put the 10 down then draws up to three cards and plays any card. If four of
@@ -43,11 +43,11 @@ export const Rules = () => {
 				pile. Place it to the side, as these cards are out of the game. The next player can play any card from
 				their hand. Play continues around the table until the Draw pile is depleted. Once the Draw pile is
 				depleted players rely solely on the cards in their hand. Keep playing until there are no cards left in
-				your hand. If you can't play on your turn, you still have to pick up the discard pile and put it in your
+				your hand. If you cant play on your turn, you still have to pick up the discard pile and put it in your
 				hand. Once you pick up the discard pile, you must play all of those cards before playing from your cards
-				on the table. When it's your turn and you don't have a hand, play one card from your face-up cards in
-				front of you. When it's your turn and you've played all your face-up cards, pick a card that's face-down
-				on the table. Don't look at it to choose. Simply flip it over. If it plays on the current card by being
+				on the table. When its your turn and you dont have a hand, play one card from your face-up cards in
+				front of you. When its your turn and youve played all your face-up cards, pick a card thats face-down on
+				the table. Dont look at it to choose. Simply flip it over. If it plays on the current card by being
 				equal or higher, you can play it. If not, you must pick up the discard pile. If you pick up the discard
 				pile, you must play those before continuing to play your face-down cards.
 				<h3>
