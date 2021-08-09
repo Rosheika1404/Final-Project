@@ -8,9 +8,7 @@ export const array = [
 		image:
 			"https://www.https://images.squarespace-cdn.com/content/v1/537e88a6e4b078fc56661bfc/1590415391995-DVO3OS7QFJAPI5ZZLEBJ/Screen+Shot+2020-05-25+at+7.00.25+AM.png?format=1000w.com/wp-content/uploads/2015/01/HackerRank2.png",
 
-		discription: "How to Play",
-
-		goto: <Link to="../views/rules" />
+		discription: "How to Play"
 	},
 	{
 		title: "Card 2",

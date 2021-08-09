@@ -16,7 +16,7 @@ export const Register = () => {
 		try {
 			await signUp(email, password, confirmPassword);
 			history.push("/dashboard");
-			console.log("success");
+			console.log("account created");
 		} catch (e) {
 			alert(e.message);
 		}
@@ -78,8 +78,12 @@ export const Register = () => {
 								className="btn btn-black"
 								value="Register"
 								onClick={e => {
-									onSignUpClicked(email, password);
-									e.preventDefault();
+									if (setConfirmPassword !== setPassword) {
+										alert("Passwords do not match");
+									} else {
+										onSignUpClicked(email, password, confirmPassword);
+										e.preventDefault();
+									}
 								}}
 							/>
 						</form>

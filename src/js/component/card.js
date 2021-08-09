@@ -1,5 +1,6 @@
 import React from "react";
 import PropTypes from "prop-types";
+import { Link } from "react-router-dom";
 
 const Card = ({ title, image, discription, goTo, button }) => {
 	return (
@@ -11,7 +12,9 @@ const Card = ({ title, image, discription, goTo, button }) => {
 			</div>
 			<div className="card-footer d-flex justify-content-center bg-white">
 				<a href={goTo} className="btn btn-primary">
-					{button}
+					<Link to="/rules">
+						<button className="btn btn-primary">Click Here</button>
+					</Link>
 				</a>
 			</div>
 		</div>
