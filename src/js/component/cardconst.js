@@ -1,3 +1,6 @@
+import React, { useState } from "react";
+import { Link } from "react-router-dom";
+
 export const array = [
 	{
 		title: "Card 1",
@@ -7,7 +10,7 @@ export const array = [
 
 		discription: "How to Play",
 
-		goto: "https://www.hackerrank.com/"
+		goto: <Link to="../views/rules" />
 	},
 	{
 		title: "Card 2",
