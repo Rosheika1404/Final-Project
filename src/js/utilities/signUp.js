@@ -3,6 +3,6 @@ import firebase from "firebase/app";
 export const signUp = (email, password) => {
 	return firebase
 		.auth()
-		.createUserWithEmailAndPassword(email, password)
+		.createUserWithEmailAndPassword(email, password, confirmPassword)
 		.then(res => console.log("res", res));
 };

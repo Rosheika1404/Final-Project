@@ -7,7 +7,7 @@ export const Dashboard = () => {
 	const history = useHistory();
 	return (
 		<>
-			<h1>LogedIn</h1>
+			<h1>Logged In</h1>
 			<button
 				onClick={() => {
 					signOut();

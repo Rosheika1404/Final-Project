@@ -11,6 +11,10 @@ export const Login = () => {
 	const [email, setEmail] = useState("");
 	const [password, setPassword] = useState("");
 
+	const [validation, setValidation] = useState(false);
+	const [validationEmail, setValidationEmail] = useState(false);
+	const [validationPassword, setValidationPassword] = useState(false);
+
 	const onSignInClicked = async (email, password) => {
 		try {
 			await signIn(email, password);
@@ -20,6 +24,20 @@ export const Login = () => {
 			alert(e.message);
 		}
 	};
+	const checkInput = input => {
+		return input === null || !input;
+	};
+	useEffect(
+		() => {
+			if (!validationEmail && !validationPassword && validation) {
+				onSignInClicked(email, password);
+				history.push("/");
+			} else {
+				setValidation(false);
+			}
+		},
+		[validation]
+	);
 
 	return (
 		<span className="card">
@@ -41,6 +59,13 @@ export const Login = () => {
 							<div className="form-group">
 								{/* <label>Email</label> */}
 								<input
+									style={
+										validationEmail
+											? {
+													border: "1px solid red"
+											  }
+											: {}
+									}
 									type="text"
 									className="form-control"
 									placeholder="Email"
@@ -50,6 +75,13 @@ export const Login = () => {
 							<div className="form-group">
 								{/* <label>Password</label> */}
 								<input
+									style={
+										validationPassword
+											? {
+													border: "1px solid red"
+											  }
+											: {}
+									}
 									type="password"
 									className="form-control"
 									placeholder="Password"
@@ -73,7 +105,9 @@ export const Login = () => {
 								className="btn btn-black"
 								value="Login"
 								onClick={e => {
-									onSignInClicked(email, password);
+									setValidationEmail(checkInput(email));
+									setValidationPassword(checkInput(password));
+									setValidation(true);
 									e.preventDefault();
 								}}
 							/>

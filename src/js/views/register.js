@@ -10,10 +10,11 @@ export const Register = () => {
 	const history = useHistory();
 	const [email, setEmail] = useState("");
 	const [password, setPassword] = useState("");
+	const [confirmPassword, setConfirmPassword] = useState("");
 
-	const onSignUpClicked = async (email, password) => {
+	const onSignUpClicked = async (email, password, confirmPassword) => {
 		try {
-			await signUp(email, password);
+			await signUp(email, password, confirmPassword);
 			history.push("/dashboard");
 			console.log("success");
 		} catch (e) {
@@ -62,7 +63,7 @@ export const Register = () => {
 									type="password"
 									className="form-control"
 									placeholder="Confirm Password"
-									onChange={e => setPassword(e.target.value)}
+									onChange={e => setConfirmPassword(e.target.value)}
 								/>
 							</div>
 
