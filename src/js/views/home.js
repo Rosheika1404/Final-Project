@@ -1,4 +1,5 @@
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
+import { Context } from "../store/appContext";
 import { useHistory } from "react-router-dom";
 import Card from "../component/card";
 import { array } from "../component/cardconst";
@@ -38,16 +39,34 @@ export const Home = () => {
 			</div>
 
 			<div className="text-center mt-5 mb-5 row justify-content-center">
-				{array.map(array => (
-					<Card
-						key={array.title}
-						title={array.title}
-						image={array.image}
-						discription={array.discription}
-						goTo={array.goto}
-						button={"Find Out More!"}
-					/>
-				))}
+				{array.map((array, i) => {
+					if (i !== 1) {
+						return (
+							<Card
+								key={array.title}
+								title={array.title}
+								image={array.image}
+								discription={array.discription}
+								goTo={array.goto}
+								button={"Find Out More!"}
+							/>
+						);
+					} else {
+						return store.isLoggedIn ? (
+							<Card
+								key={array.title}
+								title={array.title}
+								image={array.image}
+								discription={array.discription}
+								goTo={array.goto}
+								button={"Find Out More!"}
+							/>
+						) : (
+							""
+						);
+					}
+
+				})}
 			</div>
 		</div>
 	);
