@@ -1,6 +1,7 @@
 import React, { useContext } from "react";
 import { Context } from "../store/appContext";
 import { Link } from "react-router-dom";
+import { signOut } from "../utilities/signOut";
 
 export const Navbar = () => {
 	const { store, actions } = useContext(Context);
