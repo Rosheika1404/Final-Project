@@ -20,7 +20,7 @@ export const Navbar = () => {
 							className="btn btn-primary"
 							onClick={() => {
 								signOut();
-								actions.updateLogin();
+								actions.updateLogout();
 							}}>
 							Logout
 						</button>
