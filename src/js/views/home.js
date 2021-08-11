@@ -8,6 +8,7 @@ import "../../styles/home.scss";
 // import { signIn } from "../component/signIn.js";
 
 export const Home = () => {
+	const { store } = useContext(Context);
 	return (
 		<div>
 			{/* <div className="jumbotron">
@@ -65,7 +66,6 @@ export const Home = () => {
 							""
 						);
 					}
-
 				})}
 			</div>
 		</div>

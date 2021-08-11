@@ -7,6 +7,7 @@ import { Context } from "../store/appContext";
 import "../../styles/login.scss";
 
 export const Login = () => {
+	const { store, actions } = useContext(Context);
 	const history = useHistory();
 	const [email, setEmail] = useState("");
 	const [password, setPassword] = useState("");
@@ -18,6 +19,7 @@ export const Login = () => {
 	const onSignInClicked = async (email, password) => {
 		try {
 			await signIn(email, password);
+			actions.updateLogin();
 			history.push("/dashboard");
 			console.log("success");
 		} catch (e) {
