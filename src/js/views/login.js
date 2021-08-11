@@ -20,7 +20,7 @@ export const Login = () => {
 		try {
 			await signIn(email, password);
 			actions.updateLogin();
-			history.push("/dashboard");
+			history.push("/");
 			console.log("success");
 		} catch (e) {
 			alert(e.message);
