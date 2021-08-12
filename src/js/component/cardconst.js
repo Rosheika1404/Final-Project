@@ -3,20 +3,20 @@ import { Link } from "react-router-dom";
 
 export const array = [
 	{
-		title: "Card 1",
+		title: "How to Play",
 
-		image:
-			"https://www.https://images.squarespace-cdn.com/content/v1/537e88a6e4b078fc56661bfc/1590415391995-DVO3OS7QFJAPI5ZZLEBJ/Screen+Shot+2020-05-25+at+7.00.25+AM.png?format=1000w.com/wp-content/uploads/2015/01/HackerRank2.png",
+		image: "https://upload.wikimedia.org/wikipedia/commons/f/ff/Hand_in_Shithead.jpg",
 
-		discription: "How to Play"
+		discription:
+			"Take a moment to read the rules. This easy to read break down will tell you everything you need to know, to make the right plays at the right time!"
 	},
 	{
-		title: "Card 2",
+		title: "Find a Table",
 
 		image:
-			"https://w7.pngwing.com/pngs/697/467/png-transparent-poker-dealer-texas-hold-em-croupier-casino-live-casino-poker-dealer-texas-hold-em-croupier.png",
+			"https://media.gettyimages.com/videos/casino-dealer-laying-three-cards-faceup-on-table-video-id986-4?s=640x640",
 
-		discription: "Find a Table",
+		discription: "Ready to Play? Join the Fun!!!",
 
 		goto: "https://leetcode.com/"
 	}
