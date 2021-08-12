@@ -67,9 +67,9 @@ export const Register = () => {
 								/>
 							</div>
 
-							<a className="forgot text-muted" href="#">
-								Already have an account? Log In
-							</a>
+							<Link to="/login">
+								<p className="forgot text-muted">Already have an account? Log In</p>
+							</Link>
 							<br />
 							<br />
 

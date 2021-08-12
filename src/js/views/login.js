@@ -91,13 +91,15 @@ export const Login = () => {
 								/>
 							</div>
 
-							<a className="forgot text-muted" href="#">
-								Forgot password?
-							</a>
+							<Link to="/">
+								<p className="forgot text-muted" href="#">
+									Forgot password?
+								</p>
+							</Link>
 							<br />
-							<a className="forgot text-muted" href="#">
-								Need an account? Sign Up
-							</a>
+							<Link to="/register">
+								<p className="forgot text-muted">Need an account? Sign Up</p>
+							</Link>
 
 							<br />
 							<br />
