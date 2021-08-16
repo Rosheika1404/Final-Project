@@ -9,7 +9,7 @@ export const PlayerOne = () => {
         <div class="topPalace"></div>
         <div class="bottomPalace"></div>
         <div class="topPalace"></div>
-    <div class="hand-cards">
+    <div class="hand-cards"></div>
 
     </div>
 }
