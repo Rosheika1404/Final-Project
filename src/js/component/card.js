@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 
 const Card = ({ title, image, discription, goTo, button }) => {
 	return (
-		<div key={title} className="card" style={{ width: "20rem", marginRight: "10px" }}>
+		<div key={title} className="card" style={{ width: "25rem", marginRight: "10px" }}>
 			<img className="card-img-top" src={image} alt="Card image cap" height="40%" />
 			<div className="card-body">
 				<h5 className="card-title">{title}</h5>
