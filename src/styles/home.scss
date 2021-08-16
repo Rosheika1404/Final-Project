@@ -1,5 +1,13 @@
-.jumbotron p, h1{
+@import url('https://fonts.googleapis.com/css2?family=Zen+Tokyo+Zoo&display=swap');
+
+
+.jumbotron h1{
     color: black;
+    font-family: 'Zen Tokyo Zoo', cursive;
+    font-weight: 400;
+    font-size: 250px;
+    color:gold;
+    
 }
 
 .card-text, p{
