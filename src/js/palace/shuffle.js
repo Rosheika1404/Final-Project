@@ -1,5 +1,5 @@
 import React from "react";
-import { getDeck }  from "../component/deck"
+import { getDeck }  from "../palace/deck"
 
 export const ShuffleDeck = (deck) => {
     for (let i = 0; i < 52; i++) {
