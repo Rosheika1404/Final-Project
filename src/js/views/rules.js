@@ -5,7 +5,7 @@ import "../../styles/home.scss";
 
 export const Rules = () => {
 	return (
-		<div className="text-center mt-5 mb-5 row justify-content-center">
+		<div className="text-center mt-5 mb-5 row justify-content-center" id="top">
 			<p>
 				<h3>
 					<strong>THE PACK</strong>
@@ -14,19 +14,25 @@ export const Rules = () => {
 				Two players use one standard deck of 52 cards, 3-5 players use two decks
 				<h3>
 					<br />
-					<strong>RANK OF CARDS</strong>
+					<a href="#top">
+						<strong>RANK OF CARDS</strong>
+					</a>
 				</h3>
 				<br />
 				A-K-Q-J-10-9-8-7-6-5-4-3 The 2 is a special card that resets the deck.
 				<h3>
 					<br />
-					<strong>OBJECT OF THE GAME</strong>
+					<a href="#top">
+						<strong>OBJECT OF THE GAME</strong>
+					</a>
 				</h3>
 				<br />
 				Play your cards in a discard pile using ascending order, and the first player to run out of cards wins.
 				<h3>
 					<br />
-					<strong>THE DEAL</strong>
+					<a href="#top">
+						<strong>THE DEAL</strong>
+					</a>
 				</h3>
 				<br />
 				Deal three cards face down to each player. Players are not allowed to look at these cards and must place
@@ -40,7 +46,9 @@ export const Rules = () => {
 				<br /> Place the remaining cards face down in the center of the table to form the Draw pile.
 				<h3>
 					<br />
-					<strong>THE PLAY</strong>
+					<a href="#top">
+						<strong>THE PLAY</strong>
+					</a>
 				</h3>
 				<br />
 				The first player turns over the top card of the Draw pile to form the Discard pile.
@@ -86,7 +94,9 @@ export const Rules = () => {
 				cards.
 				<h3>
 					<br />
-					<strong>WHO WINS?</strong>
+					<a href="#top">
+						<strong>WHO WINS?</strong>
+					</a>
 				</h3>
 				<br />
 				Play all your face-up and face-down cards to win the game. The first person to do so wins and the game

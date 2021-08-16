@@ -3,6 +3,7 @@ import { Context } from "../store/appContext";
 import { Link } from "react-router-dom";
 import { signOut } from "../utilities/signOut";
 
+import "../../styles/navbar.scss";
 export const Navbar = () => {
 	const { store, actions } = useContext(Context);
 	return (
