@@ -28,6 +28,12 @@ export const ShuffleDeck = (deck) => {
     ShuffleDeck(NewDeck);
     console.log(NewDeck);
 
+let player1 = [];
+let player2 = []
+for(let i = 0; i<3; i++){
+  player1.push(newDeck.pop())
+  player2.push(newDeck.pop())
+}
 
 
 
