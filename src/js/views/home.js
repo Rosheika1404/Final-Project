@@ -19,9 +19,9 @@ export const Home = () => {
 					backgroundRepeat: "no-repeat",
 					backgroundSize: "cover",
 					width: "90vw",
-					height: "90vh"
+					height: "60vh"
 				}}>
-				<h1 className="display-4 justify-content-center text-center">Palace</h1>
+				<h1 className="display-4 justify-content-center text-center">Go Fish</h1>
 				<p className="lead justify-content-center text-center ">Where Luck Beats Skill</p>
 
 				{/* <button className="btn btn-primary btn-lg justify-content-center text-center lead">Play Online</button> */}
