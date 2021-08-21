@@ -4,6 +4,7 @@ import { useHistory } from "react-router-dom";
 import Card from "../component/card";
 import { array } from "../component/cardconst";
 import deckHand from "../../img/pexels-kendall.jpg";
+import { Link } from "react-router-dom";
 
 import "../../styles/home.scss";
 // import { signIn } from "../component/signIn.js";
@@ -35,6 +36,12 @@ export const Home = () => {
 					</a>
 				</p> */}
 			</div>
+
+			<Link to="/dashboard">
+				<button className="btn" href="#">
+					Cards
+				</button>
+			</Link>
 
 			<div className="text-center mt-5 mb-5 row justify-content-center">
 				{array.map((array, i) => {
