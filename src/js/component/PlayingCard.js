@@ -7,8 +7,19 @@ const PlayingCard = props => {
 
 	return (
 		<div className="playing-card">
-			<div>{value}</div>
-			<div>{suit}</div>
+			<div className="top">
+				<div>{value}</div>
+				<div>{suit}</div>
+			</div>
+
+			<div className="middle">
+				<div>{value}</div>
+			</div>
+
+			<div className="bottom">
+				<div>{value}</div>
+				<div>{suit}</div>
+			</div>
 		</div>
 	);
 };

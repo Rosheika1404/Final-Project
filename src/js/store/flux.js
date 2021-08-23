@@ -23,7 +23,7 @@ const getState = ({ getStore, getActions, setStore }) => {
 			newGame: () => {
 				const actions = getActions();
 				//s=suits v=value
-				let suits = [":spades:", ":clubs:", ":hearts:", ":diamonds:"];
+				let suits = ["♥", "♦", "♠", "♣"];
 				let ranks = ["A", "2", "3", "4", "5", "6", "7", "8", "9", "10", "J", "Q", "K"];
 				let deck = [];
 				for (let suitCounter = 0; suitCounter < suits.length; suitCounter++) {
