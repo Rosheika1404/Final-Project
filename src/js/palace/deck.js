@@ -9,11 +9,11 @@ export const getDeck = () =>{
         for (let suitCounter=0; suitCounter<suits.length; suitCounter++){
             for(let ranksCounter=0; ranksCounter<ranks.length; ranksCounter++){
     //           console.log(suits[suitCounter] + ranks[ranksCounter])
-                let card = suits[suitCounter] + ranks[ranksCounter]
+                let card = { suit: suits[suitCounter], value: ranks[ranksCounter] }
                 deck.push(card)
             }
         }
-        return deck;
+        return ShuffleDeck(deck);
     }
     
 export const ShuffleDeck = (deck) => {
