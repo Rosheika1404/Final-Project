@@ -36,8 +36,8 @@ const getState = ({ getStore, getActions, setStore }) => {
 
 				let shuffledDeck = actions.shuffleDeck(deck);
 				setStore({
-					playerOneDeck: shuffledDeck.splice(0, 4), //take first 4
-					playerTwoDeck: shuffledDeck.splice(0, 4), //now we take another other 4
+					playerOneDeck: shuffledDeck.splice(0, 7), //take first 4
+					playerTwoDeck: shuffledDeck.splice(0, 7), //now we take another other 4
 					deck: shuffledDeck
 				});
 			},
