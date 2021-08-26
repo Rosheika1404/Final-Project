@@ -41,16 +41,16 @@ export const Dashboard = () => {
 				))}
 			</div>
 
-			<h1>Player Two</h1>
+			<h1>Rest of deck </h1>
 			<div className="d-flex">
-				{store.playerTwoDeck.map((card, i) => (
+				{store.deck.map((card, i) => (
 					<PlayingCard key={i} value={card.value} suit={card.suit} />
 				))}
 			</div>
 
-			<h1>Rest of deck </h1>
+			<h1>Player Two</h1>
 			<div className="d-flex">
-				{store.deck.map((card, i) => (
+				{store.playerTwoDeck.map((card, i) => (
 					<PlayingCard key={i} value={card.value} suit={card.suit} />
 				))}
 			</div>
