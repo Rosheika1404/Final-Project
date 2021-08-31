@@ -32,7 +32,9 @@ const injectContext = PassedComponent => {
 			 *
 			 **/
 			// state.actions.loadShuffledCards();
+			state.actions.loadLoggedInUser();
 			state.actions.newGame();
+			window.store = state.store;
 		}, []);
 
 		// The initial value for the context is not null anymore, but the current state of this component,

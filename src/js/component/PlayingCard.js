@@ -1,17 +1,21 @@
 import React, { useState } from "react";
 import "../../styles/playing-card.scss";
+import cardStack from "../../img/card-deck-1.png";
 import PropTypes from "prop-types";
 
+const color = {
+	"♥": "text-danger",
+	"♦": "text-danger",
+	"♠": "",
+	"♣": ""
+};
 const PlayingCard = props => {
-	// const [suit, setSuitColor] = useState("")
-	const { value, suit } = props;
-	// if (suit === "♥" || suit === "♦") {
-	// 	setSuitColor{ "red" };
-	// 	} else {
-	// 		""
+	const { value, suit, visible } = props;
+
+	if (!visible) return <img src={cardStack} style={{ height: "220px", width: "200px" }} />;
 
 	return (
-		<div className="playing-card">
+		<div className={"playing-card " + color[suit]}>
 			<div className="top">
 				<div>{value}</div>
 				<div>{suit}</div>
@@ -30,6 +34,7 @@ const PlayingCard = props => {
 };
 PlayingCard.propTypes = {
 	value: PropTypes.string,
-	suit: PropTypes.string
+	suit: PropTypes.string,
+	visible: PropTypes.bool
 };
 export default PlayingCard;

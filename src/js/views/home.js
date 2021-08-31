@@ -37,11 +37,16 @@ export const Home = () => {
 				</p> */}
 			</div>
 
-			<Link to="/dashboard">
-				<button className="btn" href="#">
-					Cards
-				</button>
-			</Link>
+			<h2>Choose a game</h2>
+			<ul>
+				{store.games.map(g => (
+					<Link key={g.uid} to={`/game/${g.id}`}>
+						<li className="btn">
+							{g.player1} agains {g.player2}
+						</li>
+					</Link>
+				))}
+			</ul>
 
 			<div className="text-center mt-5 mb-5 row justify-content-center">
 				{array.map((array, i) => {

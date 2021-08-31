@@ -4,6 +4,7 @@ import ReactDOM from "react-dom";
 
 import firebase from "firebase/app";
 import "firebase/analytics";
+import "firebase/firestore";
 import "firebase/auth";
 //include bootstrap npm library into the bundle
 import "bootstrap/dist/css/bootstrap.css";

@@ -22,7 +22,6 @@ export const Navbar = () => {
 							className="btn btn-primary"
 							onClick={() => {
 								signOut();
-								actions.updateLogin();
 							}}>
 							Logout
 						</button>

@@ -1,7 +1,6 @@
 import React, { useState, useEffect, useContext } from "react";
 import { useHistory } from "react-router-dom";
 import { Link } from "react-router-dom";
-import { signIn } from "../utilities/signIn";
 import { Context } from "../store/appContext";
 
 import "../../styles/login.scss";
@@ -18,8 +17,7 @@ export const Login = () => {
 
 	const onSignInClicked = async (email, password) => {
 		try {
-			await signIn(email, password);
-			actions.updateLogin();
+			await actions.login(email, password);
 			history.push("/");
 			console.log("success");
 		} catch (e) {

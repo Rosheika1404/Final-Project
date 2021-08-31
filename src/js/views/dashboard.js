@@ -5,15 +5,13 @@ import PlayingCard from "../component/PlayingCard";
 import cardStack from "../../img/card-deck-1.png";
 
 import "../../styles/dashboard.scss";
+import { useParams } from "react-router-dom";
 
 export const Dashboard = () => {
 	const { actions, store } = useContext(Context);
-	const [drawCard, setDrawCard] = useState("");
+	const params = useParams();
 
-	// useEffect(() => {
-	// 	// component mounted (started showing)
-	// 	actions.newGame();
-	// }, []);
+	const game = store.games.find(g => g.id === params.game_id);
 
 	/*
 	useEffect(() => {
@@ -23,12 +21,16 @@ export const Dashboard = () => {
 	}, [])
 	*/
 
+	if (!game) return "Loading the game...";
+
 	return (
 		<div className="CardHandler">
-			{/* <h1>Player one</h1> */}
+			<h1>
+				Player1: {game.player1} vs Player 2: {game.player2}
+			</h1>
 			<div className="d-flex deck">
 				{store.playerOneDeck.map((card, i) => (
-					<PlayingCard key={i} value={card.value} suit={card.suit} />
+					<PlayingCard key={i} value={card.value} suit={card.suit} visible={game.player1 == store.user.uid} />
 				))}
 			</div>
 
@@ -43,7 +45,7 @@ export const Dashboard = () => {
 			{/* <h1>Player Two</h1> */}
 			<div className="d-flex deck">
 				{store.playerTwoDeck.map((card, i) => (
-					<PlayingCard key={i} value={card.value} suit={card.suit} />
+					<PlayingCard key={i} value={card.value} suit={card.suit} visible={game.player2 == store.user.uid} />
 				))}
 			</div>
 
