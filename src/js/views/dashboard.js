@@ -2,7 +2,7 @@ import React, { useState, useContext, useEffect } from "react";
 import { Context } from "../store/appContext";
 // import { signOut } from "../component/signOut";
 import PlayingCard from "../component/PlayingCard";
-import Cardstack  from "../../img/card-deck-4.png";
+import cardStack from "../../img/card-deck-1.png";
 
 import "../../styles/dashboard.scss";
 
@@ -34,6 +34,7 @@ export const Dashboard = () => {
 
 			{/* <h1>Rest of deck </h1> */}
 			<div className="d-flex text">
+				<img src={cardStack} style={{ height: "220px", width: "200px" }} />
 				{/* {store.deck.map((card, i) => (
 					<PlayingCard key={i} value={card.value} suit={card.suit} />
 				))} */}

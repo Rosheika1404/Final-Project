@@ -12,7 +12,7 @@ body{
     margin: 0;
     display: grid;
     // grid-template-columns: repeat(2, 4rem);
-    grid-template-rows: 20rem 15rem 20rem;
+    grid-template-rows: 20rem 20rem 20rem;
     gap:.5rem;
     cursor: pointer;
     justify-content: center;
@@ -30,8 +30,16 @@ body{
 }
 
 .text{
-grid-column: span 2;
-display: flex;
-justify-content: center;
-align-items: center;
+    height:100%;
+    width: 100%;
+    // border: 1px solid black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    .img{
+        max-height: 50px;
+        max-width: 20px;
+
+    }
 }
