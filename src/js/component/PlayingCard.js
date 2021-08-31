@@ -1,9 +1,14 @@
-import React from "react";
+import React, { useState } from "react";
 import "../../styles/playing-card.scss";
 import PropTypes from "prop-types";
 
 const PlayingCard = props => {
+	// const [suit, setSuitColor] = useState("")
 	const { value, suit } = props;
+	// if (suit === "♥" || suit === "♦") {
+	// 	setSuitColor{ "red" };
+	// 	} else {
+	// 		""
 
 	return (
 		<div className="playing-card">

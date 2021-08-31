@@ -29,7 +29,9 @@ const getState = ({ getStore, getActions, setStore }) => {
 				for (let suitCounter = 0; suitCounter < suits.length; suitCounter++) {
 					for (let ranksCounter = 0; ranksCounter < ranks.length; ranksCounter++) {
 						//           console.log(suits[suitCounter] + ranks[ranksCounter])
+						// (suit === "♥" || suit === "♦" ? style={{color:"red"}} : "")
 						let card = { suit: suits[suitCounter], value: ranks[ranksCounter] };
+
 						deck.push(card);
 					}
 				}
@@ -44,32 +46,32 @@ const getState = ({ getStore, getActions, setStore }) => {
 			// Use getActions to call a function within a fuction
 			updateLogin: () => {
 				setStore({ isLoggedIn: !getStore().isLoggedIn });
-			},
-			loadShuffledCards() {
-				fetch(API_URL + "/new/shuffle/")
-					.then(response => response.json())
-					.then(result => {
-						console.log(result),
-							setStore({ deckId: result.deck_id }),
-							console.log("card-id", result.deck_id);
-					})
-					.catch(e => console.error(e));
-			},
-			drawCard() {
-				fetch(API_URL + getStore().deckId + "/draw/?count=2", {
-					method: "POST",
-					headers: {
-						"Content-type": "application/json"
-					}
-					// body: "raw",
-					// redirect: "follow"
-				})
-					.then(res => res.json())
-					.then(response => {
-						console.log("response", response);
-						setStore({ drawCard: response });
-					});
 			}
+			// loadShuffledCards() {
+			// 	fetch(API_URL + "/new/shuffle/")
+			// 		.then(response => response.json())
+			// 		.then(result => {
+			// 			console.log(result),
+			// 				setStore({ deckId: result.deck_id }),
+			// 				console.log("card-id", result.deck_id);
+			// 		})
+			// 		.catch(e => console.error(e));
+			// },
+			// drawCard() {
+			// 	fetch(API_URL + getStore().deckId + "/draw/?count=2", {
+			// 		method: "POST",
+			// 		headers: {
+			// 			"Content-type": "application/json"
+			// 		}
+			// 		// body: "raw",
+			// 		// redirect: "follow"
+			// 	})
+			// 		.then(res => res.json())
+			// 		.then(response => {
+			// 			console.log("response", response);
+			// 			setStore({ drawCard: response });
+			// 		});
+			// }
 		}
 	};
 };
