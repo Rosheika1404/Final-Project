@@ -7,14 +7,16 @@ import { Context } from "../store/appContext";
 import "../../styles/login.scss";
 
 export const Register = () => {
+	const { store, actions } = useContext(Context);
 	const history = useHistory();
+	const [displayName, setDisplayName] = useState("");
 	const [email, setEmail] = useState("");
 	const [password, setPassword] = useState("");
 	const [confirmPassword, setConfirmPassword] = useState("");
 
 	const onSignUpClicked = async (email, password) => {
 		try {
-			await signUp(email, password);
+			await actions.signUp(email, password);
 			history.push("/dashboard");
 			console.log("account created");
 		} catch (e) {
@@ -33,12 +35,20 @@ export const Register = () => {
 					// transform: "translate(-50%, -50%)"
 				}}>
 				<div className="login-main-text">
-					<h1>Palace</h1>
 					<p>Register to play.</p>
 				</div>
 				<div className="col-md-6 col-sm-12">
 					<div className="login-form">
 						<form>
+							<div className="form-group">
+								{/* <label>Name</label> */}
+								<input
+									type="text"
+									className="form-control"
+									placeholder="Name"
+									onChange={e => setDisplayName(e.target.value)}
+								/>
+							</div>
 							<div className="form-group">
 								{/* <label>Email</label> */}
 								<input

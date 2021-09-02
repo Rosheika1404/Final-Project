@@ -19,7 +19,7 @@ export const Login = () => {
 		try {
 			await actions.login(email, password);
 			history.push("/");
-			console.log("success");
+			alert("Login success");
 		} catch (e) {
 			alert(e.message);
 		}
@@ -50,8 +50,7 @@ export const Login = () => {
 					// transform: "translate(-50%, -50%)"
 				}}>
 				<div className="login-main-text">
-					<h1>Palace</h1>
-					<p>Login or register to play.</p>
+					<p>Login to play.</p>
 				</div>
 				<div className="col-md-6 col-sm-12">
 					<div className="login-form">

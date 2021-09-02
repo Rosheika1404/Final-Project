@@ -5,11 +5,11 @@ import { signOut } from "../utilities/signOut";
 
 import "../../styles/navbar.scss";
 export const Navbar = () => {
-	const { store, actions } = useContext(Context);
+	const { store } = useContext(Context);
 	return (
-		<nav className="navbar navbar-light bg-light mb-3">
+		<nav className="navbar navbar-dark3 bg-dark mb-3">
 			<Link to="/">
-				<span className="navbar-brand mb-0 h1">Go Fish: Where Luck Beats Skill</span>
+				<span className="navbar-brand mb-0 h1">Go Fish</span>
 			</Link>
 			<div className="ml-auto">
 				{!store.isLoggedIn ? (
@@ -17,20 +17,26 @@ export const Navbar = () => {
 						<button className="btn btn-primary">Login</button>
 					</Link>
 				) : (
-					<Link to="/login">
-						<button
-							className="btn btn-primary"
-							onClick={() => {
-								signOut();
-							}}>
-							Logout
-						</button>
-					</Link>
+					<>
+						<Link to="/register">
+							<button className="btn btn-primary">Profile</button>
+						</Link>
+						&nbsp;
+						<Link to="/login">
+							<button
+								className="btn btn-primary"
+								onClick={() => {
+									signOut();
+								}}>
+								Logout
+							</button>
+						</Link>
+					</>
 				)}
-				&nbsp;
+				{/* &nbsp;
 				<Link to="/register">
 					<button className="btn btn-primary">Register</button>
-				</Link>
+				</Link> */}
 			</div>
 		</nav>
 	);

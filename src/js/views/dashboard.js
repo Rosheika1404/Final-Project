@@ -25,9 +25,9 @@ export const Dashboard = () => {
 
 	return (
 		<div className="CardHandler">
-			<h1>
+			<h3>
 				Player1: {game.player1} vs Player 2: {game.player2}
-			</h1>
+			</h3>
 			<div className="d-flex deck">
 				{store.playerOneDeck.map((card, i) => (
 					<PlayingCard key={i} value={card.value} suit={card.suit} visible={game.player1 == store.user.uid} />

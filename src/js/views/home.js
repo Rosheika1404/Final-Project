@@ -42,7 +42,7 @@ export const Home = () => {
 				{store.games.map(g => (
 					<Link key={g.uid} to={`/game/${g.id}`}>
 						<li className="btn">
-							{g.player1} agains {g.player2}
+							{g.player1} against {g.player2}
 						</li>
 					</Link>
 				))}

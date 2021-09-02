@@ -1,10 +1,10 @@
 import firebase from "firebase/app";
 
-
 const getState = ({ getStore, getActions, setStore }) => {
 	return {
 		store: {
 			user: null,
+			userId: null,
 			games: [],
 			isLoggedIn: false,
 			deckId: [],
@@ -14,6 +14,35 @@ const getState = ({ getStore, getActions, setStore }) => {
 			playerTwoDeck: []
 		},
 		actions: {
+			// Use getActions to call a function within a fuction
+
+			//Signup
+			signUp: (email, password) => {
+				const db = firebase.firestore();
+				firebase
+					.auth()
+					.createUserWithEmailAndPassword(email, password)
+					.then(result => {
+						setStore({ userId: result.user.uid });
+						console.log("user", userId);
+						return db
+							.collection("users")
+							.doc(result.user.uid)
+							.set({
+								fullName: fullName
+							});
+					});
+			},
+			// Login
+			login: (email, password) => {
+				return firebase
+					.auth()
+					.signInWithEmailAndPassword(email, password)
+					.then(res => {
+						console.log("logged in res", res.user.uid);
+						setStore({ isLoggedIn: !getStore().isLoggedIn, user: res.user });
+					});
+			},
 			loadLoggedInUser: () => {
 				const actions = getActions();
 
@@ -58,16 +87,6 @@ const getState = ({ getStore, getActions, setStore }) => {
 					deck: shuffledDeck
 				});
 			},
-			// Use getActions to call a function within a fuction
-			login: (email, password) => {
-				return firebase
-					.auth()
-					.signInWithEmailAndPassword(email, password)
-					.then(res => {
-						console.log("logged in res", res.user.uid);
-						setStore({ isLoggedIn: !getStore().isLoggedIn, user: res.user });
-					});
-			},
 
 			loadAllGames: () => {
 				let games = [];
@@ -86,11 +105,11 @@ const getState = ({ getStore, getActions, setStore }) => {
 
 			getMyGames() {
 				const store = getStore();
-				const myGames = store.games.filter(g => g.player1 === store.user.uid || g.player2 === store.user.uid);
+				const myGames = store.games.filter(
+					game => game.player1 === store.user.uid || game.player2 === store.user.uid
+				);
 				return myGames;
 			}
-
-			
 		}
 	};
 };
