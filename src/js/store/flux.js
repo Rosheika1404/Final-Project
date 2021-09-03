@@ -4,7 +4,6 @@ const getState = ({ getStore, getActions, setStore }) => {
 	return {
 		store: {
 			user: null,
-			userId: null,
 			games: [],
 			isLoggedIn: false,
 			deckId: [],
@@ -23,38 +22,21 @@ const getState = ({ getStore, getActions, setStore }) => {
 					.auth()
 					.createUserWithEmailAndPassword(email, password)
 					.then(result => {
-						setStore({ userId: result.user.uid });
-						return db
-							.collection("users")
-							.doc(result.user.uid)
-							.set({
-								displayName: displayName
-							});
+						return result.user.updateProfile({
+							displayName: displayName
+						});
 					});
 			},
 			// Login
 			login: (email, password) => {
-				return firebase
-					.auth()
-					.signInWithEmailAndPassword(email, password)
-					.then(() =>
-						firebase.auth().onAuthStateChanged(user => {
-							if (user) {
-								setStore({ userId: user.uid });
-							}
-							console.log("user ID");
-						})
-					)
-					.then(res => {
-						// console.log("logged in res", res.user.uid);
-						setStore({ isLoggedIn: !getStore().isLoggedIn, user: res.user });
-					});
+				return firebase.auth().signInWithEmailAndPassword(email, password);
 			},
 			loadLoggedInUser: () => {
 				const actions = getActions();
 
 				firebase.auth().onAuthStateChanged(function(user) {
 					if (user) {
+						console.log("user", user);
 						setStore({ isLoggedIn: true, user });
 						actions.loadAllGames();
 					} else {

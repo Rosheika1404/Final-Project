@@ -18,7 +18,7 @@ export const Login = () => {
 	const onSignInClicked = async (email, password) => {
 		try {
 			await actions.login(email, password);
-			history.push("/");
+			history.push("/profile");
 			alert("Login success");
 		} catch (e) {
 			alert(e.message);
@@ -31,7 +31,6 @@ export const Login = () => {
 		() => {
 			if (!validationEmail && !validationPassword && validation) {
 				onSignInClicked(email, password);
-				history.push("/profile");
 			} else {
 				setValidation(false);
 			}

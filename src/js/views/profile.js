@@ -7,10 +7,8 @@ import { useHistory } from "react-router-dom";
 
 import "../../styles/profile.scss";
 
-
 export const Profile = () => {
-
-	return (
-		<UserProfile />
-	);
+	const { store } = useContext(Context);
+	if (!store.user) return "loading...";
+	return <UserProfile displayName={store.user.displayName} email={store.user.email} />;
 };

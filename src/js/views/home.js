@@ -24,17 +24,6 @@ export const Home = () => {
 				}}>
 				<h1 className="display-4 justify-content-center text-center">Go Fish</h1>
 				<p className="lead justify-content-center text-center ">Where Luck Beats Skill</p>
-
-				{/* <button className="btn btn-primary btn-lg justify-content-center text-center lead">Play Online</button> */}
-
-				{/* <img src={deckHand} className="img-responsive" /> */}
-				{/* <hr className="my-4" /> */}
-
-				{/* <p className="lead">
-					<a className="btn btn-primary btn-lg" href="#" role="button">
-						Learn more
-					</a>
-				</p> */}
 			</div>
 
 			<h2>Choose a game</h2>

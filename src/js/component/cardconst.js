@@ -16,9 +16,7 @@ export const array = [
 		image:
 			"https://media.gettyimages.com/videos/casino-dealer-laying-three-cards-faceup-on-table-video-id986-4?s=640x640",
 
-		discription: "Ready to Play? Join the Fun!!!",
-
-		goto: "https://leetcode.com/"
+		discription: "Ready to Play? Join the Fun!!!"
 	}
 ];
 export default array;
