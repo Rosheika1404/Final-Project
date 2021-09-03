@@ -2,6 +2,7 @@ import React, { useState, useContext } from "react";
 import { Context } from "../store/appContext";
 import { useHistory } from "react-router-dom";
 import Card from "../component/card";
+import button from "../component/button";
 import { array } from "../component/cardconst";
 import deckHand from "../../img/pexels-kendall.jpg";
 import { Link } from "react-router-dom";
@@ -46,8 +47,7 @@ export const Home = () => {
 								title={array.title}
 								image={array.image}
 								discription={array.discription}
-								goTo={array.goto}
-								button={"Find Out More!"}
+								button={array.button}
 							/>
 						);
 					} else {
@@ -57,8 +57,7 @@ export const Home = () => {
 								title={array.title}
 								image={array.image}
 								discription={array.discription}
-								goTo={array.goto}
-								button={"Find Out More!"}
+								button={array.button}
 							/>
 						) : (
 							""
