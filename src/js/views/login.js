@@ -31,7 +31,7 @@ export const Login = () => {
 		() => {
 			if (!validationEmail && !validationPassword && validation) {
 				onSignInClicked(email, password);
-				history.push("/");
+				history.push("/profile");
 			} else {
 				setValidation(false);
 			}

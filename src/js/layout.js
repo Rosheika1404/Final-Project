@@ -7,6 +7,7 @@ import { Login } from "./views/login";
 import { Register } from "./views/register";
 import { Dashboard } from "./views/dashboard";
 import { Rules } from "./views/rules";
+import { Profile } from ".views/profile";
 import { Single } from "./views/single";
 import injectContext from "./store/appContext";
 
@@ -30,6 +31,7 @@ const Layout = () => {
 					<Route exact path="/game/:game_id" component={Dashboard} />
 					<Route exact path="/register" component={Register} />
 					<Route exact path="/rules" component={Rules} />
+					<Route exact path="/profile" component={Profile} />
 					<Route exact path="/single/:theid">
 						<Single />
 					</Route>

@@ -16,8 +16,8 @@ export const Register = () => {
 
 	const onSignUpClicked = async (email, password) => {
 		try {
-			await actions.signUp(email, password);
-			history.push("/dashboard");
+			await actions.signUp(displayName, email, password, store.userId);
+			history.push("/profile");
 			console.log("account created");
 		} catch (e) {
 			alert(e.message);

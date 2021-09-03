@@ -17,19 +17,18 @@ const getState = ({ getStore, getActions, setStore }) => {
 			// Use getActions to call a function within a fuction
 
 			//Signup
-			signUp: (email, password) => {
+			signUp: (displayName, email, password) => {
 				const db = firebase.firestore();
 				firebase
 					.auth()
 					.createUserWithEmailAndPassword(email, password)
 					.then(result => {
 						setStore({ userId: result.user.uid });
-						console.log("user", userId);
 						return db
 							.collection("users")
 							.doc(result.user.uid)
 							.set({
-								fullName: fullName
+								displayName: displayName
 							});
 					});
 			},
@@ -38,8 +37,16 @@ const getState = ({ getStore, getActions, setStore }) => {
 				return firebase
 					.auth()
 					.signInWithEmailAndPassword(email, password)
+					.then(() =>
+						firebase.auth().onAuthStateChanged(user => {
+							if (user) {
+								setStore({ userId: user.uid });
+							}
+							console.log("user ID");
+						})
+					)
 					.then(res => {
-						console.log("logged in res", res.user.uid);
+						// console.log("logged in res", res.user.uid);
 						setStore({ isLoggedIn: !getStore().isLoggedIn, user: res.user });
 					});
 			},

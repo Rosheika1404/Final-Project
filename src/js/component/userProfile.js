@@ -1,58 +1,45 @@
 import React, { useState, useContext } from "react";
 import PropTypes from "prop-types";
-import MikePhoto from "../../img/m101.jpg";
+
 import { Context } from "../store/appContext";
 import { Link } from "react-router-dom";
-import { Modal } from "./Modal";
 
-export const userProfile = props => {
-	const [state, setState] = useState({
-		//initialize state here
-		showModal: false
-	});
+
+export const UserProfile = props => {
+
 
 	const { store } = useContext(Context);
 	console.log("storee", store.contacts);
 
 	return (
-		<div>
-			<li className="list-group-item">
-				<div className="row w-100">
-					<div className="col-12 col-sm-6 col-md-3 px-0">
-						<img
-							src={MikePhoto}
-							alt="Mike Anamendolla"
-							className="rounded-circle mx-auto d-block img-fluid"
-						/>
+		<>
+			<div className="profile-card-4 text-center">
+				<img src="http://envato.jayasankarkr.in/code/profile/assets/img/profile-4.jpg" className="img img-responsive" />
+				<div className="profile-content">
+					<div className="profile-name">props.e.displayName
+						<p>props.e.email</p>
 					</div>
-					<div className="col-12 col-sm-6 col-md-9 text-center text-sm-left">
-						<div className=" float-right">
-							<Link to={"/edit/" + props.e.id + "/" + props.index}>
-								<button className="btn">
-									<i className="fas fa-pencil-alt mr-3" />
-								</button>
-							</Link>
-
-							<button className="btn" onClick={() => setState({ showModal: true })}>
-								<i className="fas fa-trash-alt" />
-							</button>
+					<div className="profile-description">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor.</div>
+					{/* <div className="row">
+						<div className="col-xs-4">
+							<div className="profile-overview">
+								<p>TWEETS</p>
+								<h4>1300</h4></div>
 						</div>
-
-						<label className="name lead">{props.e.full_name}</label>
-						<br />
-						<i className="fas fa-map-marker-alt text-muted mr-3" />
-						<span
-							className="fa fa-envelope fa-fw text-muted mr-3"
-							data-toggle="tooltip"
-							data-original-title=""
-							title=""
-						/>
-						<span className="text-muted small text-truncate">{props.e.email}</span>
-					</div>
+						<div className="col-xs-4">
+							<div className="profile-overview">
+								<p>FOLLOWERS</p>
+								<h4>250</h4></div>
+						</div>
+						<div className="col-xs-4">
+							<div className="profile-overview">
+								<p>FOLLOWING</p>
+								<h4>168</h4></div>
+						</div>
+					</div> */}
 				</div>
-			</li>
-			<Modal show={state.showModal} onClose={() => setState({ showModal: false })} id={props.e.id} />
-		</div>
+			</div>
+		</>
 	);
 };
 
@@ -60,18 +47,13 @@ export const userProfile = props => {
  * Define the data-types for
  * your component's properties
  **/
-ContactCard.propTypes = {
+UserProfile.propTypes = {
 	match: PropTypes.object,
 	history: PropTypes.object,
-	onDelete: PropTypes.func,
-	e: PropTypes.object,
-	index: PropTypes.number
+	e: PropTypes.object
 };
 
 /**
  * Define the default values for
  * your component's properties
  **/
-ContactCard.defaultProps = {
-	onDelete: null
-};
