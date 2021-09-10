@@ -12,7 +12,11 @@ const Card = ({ title, image, discription, button }) => {
 				<p className="card-text">{discription}</p>
 			</div>
 			<div className="card-footer d-flex justify-content-center bg-white">
-				<button>{button}</button>
+				<a className="btn btn-primary">
+					<Link to="/rules">
+						<button className="btn btn-primary">Click Here</button>
+					</Link>
+				</a>
 			</div>
 		</div>
 	);

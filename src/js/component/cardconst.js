@@ -9,8 +9,7 @@ export const array = [
 		image: "https://upload.wikimedia.org/wikipedia/commons/f/ff/Hand_in_Shithead.jpg",
 
 		discription:
-			"Take a moment to read the rules. This easy to read break down will tell you everything you need to know, to make the right plays at the right time!",
-		button: <Button />
+			"Take a moment to read the rules. This easy to read break down will tell you everything you need to know, to make the right plays at the right time!"
 	},
 	{
 		title: "Find a Table",
@@ -18,8 +17,7 @@ export const array = [
 		image:
 			"https://media.gettyimages.com/videos/casino-dealer-laying-three-cards-faceup-on-table-video-id986-4?s=640x640",
 
-		discription: "Ready to Play? Join the Fun!!!",
-		button: <Button />
+		discription: "Ready to Play? Join the Fun!!!"
 	}
 ];
 export default array;
